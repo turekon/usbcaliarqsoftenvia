@@ -1,0 +1,17 @@
+<div id="header">
+				<!--img src="./img/users/pabhoz.jpg" alt="The Maker Pabhoz"-->
+			<div class="title">
+				{{email}}
+				<div ng-click="logout()"  style="float:right;">
+						Cerrar sesión
+				</div>
+				<input type="hidden" id="email" value="{{email}}">
+			</div>
+		</div>
+		<div id="content">
+			<div id="results"></div>
+		</div>
+		<div id="textBar">
+			<input type="text" id="text" placeholder="Escriba su mensaje..."><button id="post">Enviar</button>
+		</div>
+		<script src="./public/js/chat.js"></script>

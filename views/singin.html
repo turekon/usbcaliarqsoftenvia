@@ -1,0 +1,32 @@
+<h2>Registro</h2>
+
+    <form 
+    name="myForm" ng-submit="registro()" role="form" class="niceForm" novalidate>
+
+        <div>Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+        <div>
+            <input type="email" name="email" ng-model="email" value="" required>
+            <div style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+                <span ng-show="myForm.email.$error.required">Email is required.</span>
+                <span ng-show="myForm.email.$error.email">Invalid email address.</span>
+            </div>
+        </div>
+
+        <div>Password:</div>
+        <div>
+            <input type="password" name="password" ng-model="password" value="" required>
+            <div style="color:red" ng-show="myForm.password.$dirty && myForm.password.$invalid">
+                <span ng-show="myForm.password.$error.required">Password is required.</span>
+            </div>
+        </div>
+
+        <p>
+        <input type="submit" value="Registrarse"
+        ng-disabled="myForm.email.$pristine || myForm.email.$dirty && myForm.email.$invalid ||  
+        myForm.password.$pristine ||myForm.password.$dirty && myForm.password.$invalid">
+        </p>
+        <div class="coolLink" ng-click="volver()">
+            No quieres registrarte? Volver
+        </div>
+
+    </form>
